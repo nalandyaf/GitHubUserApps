@@ -1,4 +1,4 @@
-package com.cermati.test.domain
+package com.cermati.test.domain.mapper
 
 import com.cermati.test.domain.entities.UserEntity
 import com.cermati.test.domain.exceptions.MapperException
