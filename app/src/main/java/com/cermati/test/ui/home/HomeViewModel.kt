@@ -5,20 +5,18 @@ import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.cermati.test.R
 import com.cermati.test.databinding.ItemUserBinding
 import com.cermati.test.domain.models.User
 import com.cermati.test.domain.usecases.user.IUserUsecases
 import com.cermati.test.ui.base.BaseViewModel
 import com.cermati.test.ui.home.adapter.UserListAdapter
-import com.cermati.test.utils.AndroidUtils
 import com.cermati.test.utils.SchedulerProvider
 import com.github.apps.ui.home.HomeNavigator
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-open class HomeViewModel(baseUsecase: IUserUsecases, schedulerProvider: SchedulerProvider)
-    : BaseViewModel<IUserUsecases, HomeNavigator>(baseUsecase, schedulerProvider) {
+open class HomeViewModel(baseUsecase: IUserUsecases, schedulerProvider: SchedulerProvider) :
+    BaseViewModel<IUserUsecases, HomeNavigator>(baseUsecase, schedulerProvider) {
 
     var search = ObservableField<String>()
     var isEmpty = ObservableBoolean(true)
@@ -29,7 +27,7 @@ open class HomeViewModel(baseUsecase: IUserUsecases, schedulerProvider: Schedule
     var page: Int = 1
 
     override fun defineLayout() {
-        appBarTitle.set(AndroidUtils.getString(R.string.app_name))
+
     }
 
     fun afterTextSearchChanged(s: Editable) {

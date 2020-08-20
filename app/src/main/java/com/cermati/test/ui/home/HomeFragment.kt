@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.cermati.test.BR
 import com.cermati.test.R
 import com.cermati.test.ViewModelProviderFactory
@@ -47,14 +49,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding?, HomeViewModel>(), HomeNa
     }
 
     private fun setLoadMore() {
-//        viewDataBinding?.rvList?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//                super.onScrolled(recyclerView, dx, dy)
-//                val linearLayoutManager = recyclerView.layoutManager as LinearLayoutManager?
-//                    viewModel.loadMoreData(linearLayoutManager)
-//
-//            }
-//        })
+        viewDataBinding?.rvList?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val linearLayoutManager = recyclerView.layoutManager as LinearLayoutManager?
+                viewModel.loadMoreData(linearLayoutManager)
+
+            }
+        })
     }
 
     override fun showError(message: String) {

@@ -23,6 +23,6 @@
     <string name="error_fetching_remote_data_title">Error fetching data from server!</string>
     <string name="error_fetching_remote_data_description">An error occurs while fetching data from server. Please try again later!</string>
     <string name="font_path_grotesk">fonts/grotesk/Tele-GroteskNor.ttf</string>
-    <string name="label_hint_search_user">Search user</string>
+    <string name="label_hint_search_user">Search Github users</string>
     <string name="label_empty_data">Data Kosong</string>
 </resources>

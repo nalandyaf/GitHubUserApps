@@ -9,7 +9,8 @@ import com.cermati.test.domain.models.User
 import com.cermati.test.ui.base.BaseAdapter
 import com.github.apps.ui.home.adapter.UserListItemViewModel
 
-class UserListAdapter(data: ArrayList<User>, action: (User, ItemUserBinding) -> Unit) : BaseAdapter<User>(data) {
+class UserListAdapter(data: ArrayList<User>, action: (User, ItemUserBinding) -> Unit) :
+    BaseAdapter<User>(data) {
 
     private val action: (User, ItemUserBinding) -> Unit = action
     private lateinit var binding: ItemUserBinding
@@ -19,13 +20,18 @@ class UserListAdapter(data: ArrayList<User>, action: (User, ItemUserBinding) -> 
 
     override fun createHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == VIEW_ITEM) {
-            binding = ItemUserBinding.inflate(LayoutInflater.from(parent.context),
-                    parent, false)
+            binding = ItemUserBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent, false
+            )
             GenericViewHolder(binding)
         } else {
             GenericViewHolder(
-                LoadingRecyclerBinding.inflate(LayoutInflater.from(parent.context),
-                    parent, false))
+                LoadingRecyclerBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent, false
+                )
+            )
         }
     }
 
@@ -35,8 +41,8 @@ class UserListAdapter(data: ArrayList<User>, action: (User, ItemUserBinding) -> 
 
     override fun bindingViewHolder(holder: GenericViewHolder, position: Int) {
         if (holder.viewDataBinding is ItemUserBinding) {
-//            (holder.viewDataBinding as ItemUserBinding).itemViewModel =
-//                    UserListItemViewModel(getItem(position), action, binding)
+            (holder.viewDataBinding as ItemUserBinding).itemViewModel =
+                    UserListItemViewModel(getItem(position), action, binding)
         }
     }
 

@@ -10,6 +10,7 @@
     <color name="grey_dark">#8e8e93</color>
     <color name="loading_transparent">#ab606060</color>
     <color name="grey_background">#fafafa</color>
+    <color name="blue_turquoise">#03C2DB</color>
 
 
 </resources>
